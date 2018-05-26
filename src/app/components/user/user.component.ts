@@ -15,6 +15,8 @@ export class UserComponent implements OnInit {
   hobbies: string[];
   hello: any;
   posts: Post[];
+  isEdit: boolean = false;
+
 
   constructor(private dataService: DataService) {
     console.log("constructor ran...");
@@ -41,6 +43,10 @@ export class UserComponent implements OnInit {
   onClick() {
     // console.log("button clicked - typescript");
     this.name = "Brad Traversy";
+  }
+
+  toggleEdit() {
+    this.isEdit = !this.isEdit;
   }
 
   formSubmit(hobby) {

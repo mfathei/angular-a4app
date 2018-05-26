@@ -6,6 +6,7 @@
 </ul>
 
 <button (click)="onClick()" class="btn btn-primary">Click Me</button>
+<button (click)="toggleEdit()" class="btn btn-primary">Toggle Edit</button>
 <br>
 <br>
 <br>
@@ -20,7 +21,7 @@
 <br>
 <br>
 
-<form >
+<form *ngIf="isEdit">
   <h4>Edit User</h4>
   <div class="form-group">
     <label for="name">Name: </label>
