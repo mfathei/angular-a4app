@@ -1,0 +1,23 @@
+<h1>{{ name }}</h1>
+<ul>
+  <li>Age: {{ age }}</li>
+  <li>Email: {{ email }}</li>
+  <li>{{ address.street}} {{ address.city }}, {{ address.state }}</li>
+</ul>
+
+<button (click)="onClick()" class="btn btn-primary">Click Me</button>
+<br>
+<br>
+<br>
+
+<form (submit)="formSubmit(hobby.value)">
+  <div class="form-group">
+    <label for="">Name: </label>
+    <input type="text" name="hobby" #hobby>
+  </div>
+</form>
+
+<h4>hobbies</h4>
+<ul>
+  <li *ngFor="let hobby of hobbies; let i = index">{{ i }} - {{ hobby }} <span title="delete hobby" (click)="deleteHobby(hobby)" class="glyphicon glyphicon-remove text-danger"></span></li>
+</ul>
